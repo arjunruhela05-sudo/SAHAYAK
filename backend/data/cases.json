@@ -6,7 +6,7 @@
     "status": "NEW",
     "human_review_required": true,
     "created_at": "2026-09-09T21:01:12.533008+00:00",
-    "updated_at": "2026-09-09T21:01:12.542124+00:00",
+    "updated_at": "2026-09-09T21:33:44.071252+00:00",
     "language": "nn",
     "signals": {
       "fear": 0.0,
@@ -444,6 +444,17 @@
         "event": "CASE_CREATED",
         "timestamp": "2026-09-09T21:01:12.533008+00:00",
         "description": "Assessment case created and stored for authorized human review."
+      }
+    ],
+    "submitted_evidence": [
+      {
+        "id": "872205f28f40454681ba58ccbb2cc577",
+        "filename": "Screenshot 2026-08-22 104524.png",
+        "stored_name": "SAH-2026-536179-872205f28f40454681ba58ccbb2cc577.png",
+        "content_type": "image/png",
+        "size": 9458,
+        "created_at": "2026-09-09T21:33:44.071252+00:00",
+        "url": "/api/cases/SAH-2026-536179/evidence/872205f28f40454681ba58ccbb2cc577"
       }
     ]
   },

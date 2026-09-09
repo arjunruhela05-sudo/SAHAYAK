@@ -1,6 +1,13 @@
 from typing import Optional, Union
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import (
+    APIRouter,
+    File,
+    HTTPException,
+    Query,
+    UploadFile,
+)
+
 from fastapi.responses import FileResponse
 
 from models.case import (
@@ -22,6 +29,8 @@ from services.case_service import (
     list_cases,
     search_cases,
     update_case_status,
+    add_case_evidence,
+    get_case_evidence_path,
 )
 
 from services.validation_service import (
@@ -115,18 +124,21 @@ def get_cases(
         return [case_to_participant_summary(case) for case in ordered]
 
     return [
-        CaseSummary(
-            case_id=case["case_id"],
-            svi_score=case["svi_score"],
-            risk_level=case["risk_level"],
-            status=case["status"],
-            human_review_required=(
-                case["human_review_required"]
-            ),
-            created_at=case["created_at"],
-        )
-        for case in cases
-    ]
+    CaseSummary(
+        case_id=case["case_id"],
+        svi_score=case["svi_score"],
+        risk_level=case["risk_level"],
+        status=case["status"],
+        human_review_required=(
+            case["human_review_required"]
+        ),
+        created_at=case["created_at"],
+        has_evidence=bool(
+            case.get("submitted_evidence")
+        ),
+    )
+    for case in cases
+]
 
 
 @router.get(
@@ -173,6 +185,197 @@ def get_case_media(case_id: str):
         filename=media.get("filename") or path.name,
     )
 
+
+@router.post("/{case_id}/evidence")
+async def upload_case_evidence(
+    case_id: str,
+    file: UploadFile = File(...),
+):
+    """Upload additional evidence supplied by the victim."""
+
+    case = get_case(case_id)
+
+    if case is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Case not found.",
+        )
+
+    file_bytes = await file.read()
+
+    if not file_bytes:
+        raise HTTPException(
+            status_code=400,
+            detail="Evidence file is empty.",
+        )
+
+    # Maximum 50 MB per file
+    if len(file_bytes) > 50 * 1024 * 1024:
+        raise HTTPException(
+            status_code=413,
+            detail="Evidence file must be 50 MB or smaller.",
+        )
+
+    try:
+        return add_case_evidence(
+            case_id=case_id,
+            file_bytes=file_bytes,
+            filename=file.filename or "evidence.bin",
+            content_type=file.content_type,
+        )
+
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
+
+
+@router.get("/{case_id}/evidence/{evidence_id}")
+def get_case_evidence(
+    case_id: str,
+    evidence_id: str,
+):
+    case = get_case(case_id)
+
+    if case is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Case not found.",
+        )
+
+    item = next(
+        (
+            x
+            for x in case.get("submitted_evidence") or []
+            if str(x.get("id")) == str(evidence_id)
+        ),
+        None,
+    )
+
+    path = get_case_evidence_path(
+        case_id,
+        evidence_id,
+    )
+
+    if item is None or path is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Evidence not found.",
+        )
+
+    return FileResponse(
+        path,
+        media_type=item.get("content_type")
+        or "application/octet-stream",
+        filename=item.get("filename")
+        or path.name,
+    )
+
+@router.post(
+    "/{case_id}/evidence"
+)
+async def upload_case_evidence(
+    case_id: str,
+    file: UploadFile = File(...),
+):
+
+    case = get_case(case_id)
+
+    if case is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Case not found.",
+        )
+
+    file_bytes = await file.read()
+
+    if not file_bytes:
+        raise HTTPException(
+            status_code=400,
+            detail="Evidence file is empty.",
+        )
+
+    if len(file_bytes) > 50 * 1024 * 1024:
+        raise HTTPException(
+            status_code=413,
+            detail="Evidence file must be 50 MB or smaller.",
+        )
+
+    try:
+
+        return add_case_evidence(
+            case_id=case_id,
+            file_bytes=file_bytes,
+            filename=(
+                file.filename
+                or "evidence.bin"
+            ),
+            content_type=file.content_type,
+        )
+
+    except ValueError as exc:
+
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
+
+
+@router.get(
+    "/{case_id}/evidence/{evidence_id}"
+)
+def get_case_evidence(
+    case_id: str,
+    evidence_id: str,
+):
+
+    case = get_case(case_id)
+
+    if case is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Case not found.",
+        )
+
+    item = next(
+        (
+            x
+            for x in (
+                case.get(
+                    "submitted_evidence"
+                )
+                or []
+            )
+            if str(
+                x.get("id")
+            ) == str(evidence_id)
+        ),
+        None,
+    )
+
+    path = get_case_evidence_path(
+        case_id,
+        evidence_id,
+    )
+
+    if item is None or path is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Evidence not found.",
+        )
+
+    return FileResponse(
+        path=str(path),
+        media_type=(
+            item.get("content_type")
+            or "application/octet-stream"
+        ),
+        filename=(
+            item.get("filename")
+            or path.name
+        ),
+    )    
 
 @router.patch(
     "/{case_id}/status",

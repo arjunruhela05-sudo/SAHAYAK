@@ -16,6 +16,7 @@ class CaseSummary(BaseModel):
     status: str
     human_review_required: bool
     created_at: str
+    has_evidence: bool = False
 
 
 class Case(BaseModel):
@@ -43,7 +44,8 @@ class Case(BaseModel):
     narrative_context: Optional[dict] = None
     transcript: Optional[str] = None
     narrative: Optional[str] = None
-    media: Optional[dict] = None
+    mmedia: Optional[dict] = None
+    submitted_evidence: List[dict] = Field(default_factory=list)
 
 
 class ParticipantCaseSummary(BaseModel):

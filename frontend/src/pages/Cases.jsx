@@ -44,18 +44,30 @@ const Cases = () => {
        <section className="panel table-panel">
         <div className="table-shell">
           <table className="modern-table queue-table">
-            <thead><tr><th>Case ID</th><th>SVI score</th><th>Risk</th><th>Status</th><th>Created</th><th>Review</th><th /></tr></thead>
+            <thead><tr><th>Case ID</th><th>SVI score</th><th>Risk</th><th>Evidence</th><th>Status</th><th>Created</th><th>Review</th><th /></tr></thead>
             <tbody>
               {cases.map(c => <tr key={c.case_id}>
                 <td><button className="case-link" onClick={() => navigate(`/cases/${c.case_id}`)}>{c.case_id}</button></td>
                 <td><span className="score-pill">{c.svi_score ?? '—'}</span></td>
                 <td><RiskBadge level={c.risk_level} /></td>
+                <td>
+  {c.has_evidence ? (
+    <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-teal-700">
+      <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
+      Evidence
+    </span>
+  ) : (
+    <span className="text-[10px] text-slate-400">
+      —
+    </span>
+  )}
+</td>
                 <td><select className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs" value={c.status || "NEW"} onChange={e=>updateStatus(c.case_id,e.target.value)}><option value="NEW">New</option><option value="UNDER_REVIEW">Under Review</option><option value="ACTION_REQUIRED">Action Required</option><option value="RESOLVED">Resolved</option><option value="CLOSED">Closed</option></select></td>
                 <td>{c.created_at || 'N/A'}</td>
                 <td><span className={c.human_review_required ? 'review-required' : 'review-complete'}>{c.human_review_required ? 'Required' : 'Complete'}</span></td>
                 <td><button className="row-action" onClick={() => navigate(`/cases/${c.case_id}`)}><ArrowUpRight size={16} /></button></td>
               </tr>)}
-              {!cases.length && <tr><td colSpan="7"><div className="empty-state"><strong>No matching cases</strong><span>Try a different search or risk filter.</span></div></td></tr>}
+              {!cases.length && <tr><td colSpan="8"><div className="empty-state"><strong>No matching cases</strong><span>Try a different search or risk filter.</span></div></td></tr>}
             </tbody>
           </table>
         </div>

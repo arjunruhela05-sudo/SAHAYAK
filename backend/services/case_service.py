@@ -1,10 +1,10 @@
 from __future__ import annotations
-
+import uuid
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-
+from functools import cmp_to_key
 
 # =========================================================
 # STORAGE
@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 CASES_FILE = DATA_DIR / "cases.json"
 MEDIA_DIR = DATA_DIR / "media"
+EVIDENCE_DIR = DATA_DIR / "evidence"
 
 
 # =========================================================
@@ -82,6 +83,7 @@ def ensure_storage() -> None:
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     MEDIA_DIR.mkdir(parents=True, exist_ok=True)
+    EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
 
     if not CASES_FILE.exists():
         CASES_FILE.write_text(
@@ -179,57 +181,95 @@ def _sort_cases(
     cases: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     """
-    Sort cases by operational priority.
+    Sort cases by SVI score.
 
-    Priority:
-        CRITICAL → HIGH → MODERATE → LOW
+    Highest SVI is the main priority.
 
-    Within the same risk level:
-        Higher SVI → Lower SVI
+    If an evidence case is within 3 SVI points
+    of a higher-scoring non-evidence case, the
+    evidence case is moved above that nearby case.
 
-    Final tie-breaker:
-        Newer case first.
+    Example:
+        93  no evidence
+        92  evidence
+        85  no evidence
+
+    Result:
+        92  evidence
+        93  no evidence
+        85  no evidence
     """
 
-    def sort_key(case: Dict[str, Any]):
-        risk = str(
-            case.get(
-                "risk_level",
-                "LOW",
-            )
-        ).upper()
-
-        try:
-            svi = float(
-                case.get(
-                    "svi_score",
-                    0,
-                )
-            )
-        except (TypeError, ValueError):
-            svi = 0.0
-
-        created_at = str(
-            case.get(
-                "created_at",
-                "",
-            )
-        )
-
-        return (
-            RISK_PRIORITY.get(
-                risk,
-                99,
-            ),
-            -svi,
-            created_at,
-        )
-
-    return sorted(
+    # First: highest SVI score
+    ordered = sorted(
         cases,
-        key=sort_key,
+        key=lambda case: float(
+            case.get("svi_score") or 0
+        ),
+        reverse=True,
     )
 
+    EVIDENCE_RANGE = 3
+
+    i = 1
+
+    while i < len(ordered):
+
+        current = ordered[i]
+
+        has_evidence = bool(
+            current.get("submitted_evidence")
+        )
+
+        if not has_evidence:
+            i += 1
+            continue
+
+        current_svi = float(
+            current.get("svi_score") or 0
+        )
+
+        # Look upward for the nearest higher-SVI
+        # non-evidence case.
+        j = i - 1
+
+        while j >= 0:
+
+            previous = ordered[j]
+
+            previous_has_evidence = bool(
+                previous.get("submitted_evidence")
+            )
+
+            previous_svi = float(
+                previous.get("svi_score") or 0
+            )
+
+            difference = (
+                previous_svi - current_svi
+            )
+
+            # Stop if the SVI gap is too large.
+            if difference > EVIDENCE_RANGE:
+                break
+
+            # Move the evidence case above a nearby
+            # non-evidence case.
+            if not previous_has_evidence:
+
+                ordered[j], ordered[j + 1] = (
+                    ordered[j + 1],
+                    ordered[j],
+                )
+
+                j -= 1
+                continue
+
+            j -= 1
+
+        i += 1
+
+    return ordered
 def get_cases(
     risk: Optional[str] = None,
     status: Optional[str] = None,
@@ -462,7 +502,112 @@ def attach_case_media(
     save_cases(CASES)
     return case
 
+def add_case_evidence(
+    case_id: str,
+    file_bytes: bytes,
+    filename: str,
+    content_type: Optional[str] = None,
+) -> Dict[str, Any]:
 
+    case = find_case(case_id)
+
+    if case is None:
+        raise KeyError(
+            f"Case '{case_id}' not found."
+        )
+
+    if not file_bytes:
+        raise ValueError(
+            "Evidence file is empty."
+        )
+
+    safe_name = Path(
+        filename or "evidence.bin"
+    ).name
+
+    import uuid
+
+    evidence_id = uuid.uuid4().hex
+
+    extension = Path(
+        safe_name
+    ).suffix.lower()
+
+    stored_name = (
+        f"{case_id}-{evidence_id}{extension}"
+    )
+
+    target = EVIDENCE_DIR / stored_name
+
+    target.write_bytes(file_bytes)
+
+    timestamp = utc_now()
+
+    item = {
+        "id": evidence_id,
+        "filename": safe_name,
+        "stored_name": stored_name,
+        "content_type": (
+            content_type
+            or "application/octet-stream"
+        ),
+        "size": len(file_bytes),
+        "created_at": timestamp,
+        "url": (
+            f"/api/cases/{case_id}/"
+            f"evidence/{evidence_id}"
+        ),
+    }
+
+    case.setdefault(
+        "submitted_evidence",
+        []
+    ).append(item)
+
+    case["updated_at"] = timestamp
+
+    save_cases(CASES)
+
+    return item
+
+
+def get_case_evidence_path(
+    case_id: str,
+    evidence_id: str,
+) -> Optional[Path]:
+
+    case = find_case(case_id)
+
+    if case is None:
+        return None
+
+    for item in (
+        case.get("submitted_evidence")
+        or []
+    ):
+
+        if str(
+            item.get("id")
+        ) == str(evidence_id):
+
+            stored_name = Path(
+                str(
+                    item.get(
+                        "stored_name",
+                        "",
+                    )
+                )
+            ).name
+
+            path = (
+                EVIDENCE_DIR /
+                stored_name
+            )
+
+            if path.exists():
+                return path
+
+    return None
 def get_case_media_path(case_id: str) -> Optional[Path]:
     case = find_case(case_id)
     if case is None:
@@ -476,7 +621,74 @@ def get_case_media_path(case_id: str) -> Optional[Path]:
         path = MEDIA_DIR / f"{case_id}{extension}"
     return path if path.exists() else None
 
+def add_case_evidence(
+    case_id: str,
+    file_bytes: bytes,
+    filename: str,
+    content_type: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Store an additional victim-supplied evidence file on a case."""
 
+    case = find_case(case_id)
+
+    if case is None:
+        raise KeyError(f"Case '{case_id}' not found.")
+
+    if not file_bytes:
+        raise ValueError("Evidence file is empty.")
+
+    safe_name = Path(filename or "evidence.bin").name
+    evidence_id = uuid.uuid4().hex
+
+    extension = Path(safe_name).suffix.lower()
+    stored_name = f"{case_id}-{evidence_id}{extension}"
+
+    target = EVIDENCE_DIR / stored_name
+    target.write_bytes(file_bytes)
+
+    timestamp = utc_now()
+
+    item = {
+        "id": evidence_id,
+        "filename": safe_name,
+        "stored_name": stored_name,
+        "content_type": content_type or "application/octet-stream",
+        "size": len(file_bytes),
+        "created_at": timestamp,
+        "url": f"/api/cases/{case_id}/evidence/{evidence_id}",
+    }
+
+    case.setdefault("submitted_evidence", []).append(item)
+    case["updated_at"] = timestamp
+
+    save_cases(CASES)
+
+    return item
+
+
+def get_case_evidence_path(
+    case_id: str,
+    evidence_id: str,
+) -> Optional[Path]:
+
+    case = find_case(case_id)
+
+    if case is None:
+        return None
+
+    for item in case.get("submitted_evidence") or []:
+
+        if str(item.get("id")) == str(evidence_id):
+
+            stored_name = Path(
+                str(item.get("stored_name") or "")
+            ).name
+
+            path = EVIDENCE_DIR / stored_name
+
+            return path if path.exists() else None
+
+    return None
 # =========================================================
 # CREATE CASE
 # =========================================================
@@ -609,6 +821,7 @@ def create_case(
         "transcript": transcript,
         "narrative": narrative,
         "media": None,
+        "submitted_evidence": [],
         "timeline": [],
     }
 

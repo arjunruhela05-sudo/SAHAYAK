@@ -200,6 +200,31 @@ export const api = {
   getCaseMediaUrl(caseId) {
     return `${API_BASE_URL}/api/cases/${encodeURIComponent(caseId)}/media`;
   },
+  getCaseEvidenceUrl(caseId, evidenceId) {
+  return `${API_BASE_URL}/api/cases/${encodeURIComponent(caseId)}/evidence/${encodeURIComponent(evidenceId)}`;
+},
+
+  async uploadCaseEvidence(caseId, file) {
+  if (!file) {
+    throw new Error("Evidence file is required.");
+  }
+
+  const fd = new FormData();
+
+  fd.append(
+    "file",
+    file,
+    file.name || "evidence.bin"
+  );
+
+  return remote(
+    `/api/cases/${encodeURIComponent(caseId)}/evidence`,
+    {
+      method: "POST",
+      body: fd,
+    }
+  );
+},
 
   async updateCaseStatus(caseId, status) {
     const normalized = normalizeStatus(status);

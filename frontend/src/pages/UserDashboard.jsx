@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowUpRight, Bot, CheckCircle2, Clock3, FilePlus2, FileText, HeartHandshake, HeartPulse,
-  Mic, PhoneCall, RefreshCw, Send, ShieldCheck, Sparkles, Video, X,
+  Mic, PhoneCall, RefreshCw, Send, ShieldCheck, Sparkles, Video, X,Upload,
+Paperclip,
 } from "lucide-react";
 
 import { api } from "../api";
@@ -46,6 +47,10 @@ export default function UserDashboard() {
   const [showVoice, setShowVoice] = useState(false);
   const [showAssistant, setShowAssistant] = useState(false);
   const [message, setMessage] = useState("");
+  const [evidenceCaseId, setEvidenceCaseId] = useState("");
+  const [evidenceFiles, setEvidenceFiles] = useState([]);
+  const [evidenceUploading, setEvidenceUploading] = useState(false);
+  const [evidenceMessage, setEvidenceMessage] = useState("");
   const [messages, setMessages] = useState([
     { role: "assistant", text: "Hello. I can tell you whether your statements have been received and whether a responder has reviewed them yet." },
   ]);
@@ -88,6 +93,45 @@ export default function UserDashboard() {
       alert(err.message || "Your voice statement could not be sent. Please try again.");
     }
   };
+
+  const uploadEvidence = async () => {
+  if (!evidenceCaseId) {
+    setEvidenceMessage("Select a case first.");
+    return;
+  }
+
+  if (!evidenceFiles.length) {
+    setEvidenceMessage("Choose at least one file.");
+    return;
+  }
+
+  setEvidenceUploading(true);
+  setEvidenceMessage("");
+
+  try {
+    for (const file of evidenceFiles) {
+      await api.uploadCaseEvidence(
+        evidenceCaseId,
+        file
+      );
+    }
+
+    setEvidenceFiles([]);
+    setEvidenceMessage(
+      "Evidence added successfully."
+    );
+
+    await loadCases();
+
+  } catch (err) {
+    setEvidenceMessage(
+      err.message ||
+      "Unable to upload evidence."
+    );
+  } finally {
+    setEvidenceUploading(false);
+  }
+};
 
   const reply = (text) => {
     const q = text.toLowerCase();
@@ -197,6 +241,132 @@ export default function UserDashboard() {
           <VoiceRecorder onUpload={handleVoiceUpload} participantMode />
         </Modal>
       )}
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+
+  <div className="flex items-start gap-3">
+
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+      <Paperclip size={20} />
+    </div>
+
+    <div>
+      <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+        Case evidence
+      </p>
+
+      <h3 className="mt-1 text-sm font-bold text-slate-900">
+        Add supporting evidence
+      </h3>
+    </div>
+
+  </div>
+
+  <p className="mt-3 text-xs leading-5 text-slate-500">
+    Add photos, audio, video, PDFs, documents or any other file that supports your statement.
+  </p>
+
+  {cases.length > 0 ? (
+    <div className="mt-4 space-y-3">
+
+      <select
+        value={evidenceCaseId}
+        onChange={(e) =>
+          setEvidenceCaseId(e.target.value)
+        }
+        className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-semibold text-slate-700 outline-none focus:border-teal-500"
+      >
+        <option value="">
+          Select case
+        </option>
+
+        {cases.map((c) => (
+          <option
+            key={c.case_id}
+            value={c.case_id}
+          >
+            {c.case_id}
+          </option>
+        ))}
+      </select>
+
+      <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-xs font-bold text-slate-600 hover:bg-slate-100">
+
+        <Upload size={16} />
+
+        Choose files
+
+        <input
+          type="file"
+          multiple
+          className="hidden"
+          onChange={(e) =>
+            setEvidenceFiles(
+              Array.from(
+                e.target.files || []
+              )
+            )
+          }
+        />
+
+      </label>
+
+      {evidenceFiles.length > 0 && (
+        <div className="space-y-1">
+
+          {evidenceFiles.map((file) => (
+            <div
+              key={`${file.name}-${file.size}`}
+              className="flex items-center justify-between gap-2 rounded-lg bg-slate-50 px-3 py-2 text-[10px] text-slate-600"
+            >
+              <span className="truncate">
+                {file.name}
+              </span>
+
+              <span>
+                {Math.ceil(
+                  file.size / 1024
+                )} KB
+              </span>
+            </div>
+          ))}
+
+        </div>
+      )}
+
+      <button
+        onClick={uploadEvidence}
+        disabled={evidenceUploading}
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#102f49] px-4 py-2.5 text-xs font-bold text-white disabled:opacity-60"
+      >
+        <Upload size={14} />
+
+        {evidenceUploading
+          ? "Uploading…"
+          : "Add evidence"}
+      </button>
+
+      {evidenceMessage && (
+        <p
+          className={`text-[11px] ${
+            evidenceMessage.includes(
+              "success"
+            )
+              ? "text-emerald-600"
+              : "text-red-600"
+          }`}
+        >
+          {evidenceMessage}
+        </p>
+      )}
+
+    </div>
+  ) : (
+    <p className="mt-4 text-[11px] text-slate-500">
+      Submit a statement first, then attach supporting evidence to that case.
+    </p>
+  )}
+
+</div>
 
       {/* ---------------- assistant modal ---------------- */}
       {showAssistant && (
