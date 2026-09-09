@@ -1,0 +1,899 @@
+[
+  {
+    "case_id": "SAH-2026-536179",
+    "svi_score": 8.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-09T21:01:12.533008+00:00",
+    "updated_at": "2026-09-09T21:01:12.542124+00:00",
+    "language": "nn",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 0.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators.",
+      "The narrative was also read as a whole (cross-sentence context and discourse structure); narrative stress index 0/100.",
+      "Voice delivery (pitch, pauses, breathing, tremor, pace, tone, fumbling) was analysed over the whole recording as a supplementary indicator (voice indicator 43/100, adjustment +6.5).",
+      "Voice: Speech was frequently interrupted by pauses.",
+      "Voice: Unstable loudness (shimmer) indicating vocal tension.",
+      "Voice: Voice tremor (4-10 Hz amplitude modulation) detected.",
+      "Voice: Slow, effortful speech (~2.2 syllables/sec).",
+      "Body-language cues from the video (blinking, eye contact, self-soothing gestures, muscle tension, posture, swallowing, expression) were analysed as a supplementary indicator (behaviour indicator 18/100, adjustment +1.5, capture reliability 72%).",
+      "Body language: Restless, darting gaze."
+    ],
+    "evidence": [],
+    "recommendations": [
+      "Complete standard human review of the assessment."
+    ],
+    "capture_mode": "video",
+    "modalities": {
+      "text_svi": 0.0,
+      "fused_svi": 8.0,
+      "fusion_method": "text_primary+voice+behavior",
+      "voice_indicator": 43.1,
+      "behavior_indicator": 17.6,
+      "voice_adjustment": 6.5,
+      "behavior_adjustment": 1.5,
+      "acoustic": {
+        "available": true,
+        "indicator": 58.0,
+        "sub_scores": {
+          "rms": 2.7,
+          "zero_crossing_rate": 36.2,
+          "pitch_variability": 100.0
+        },
+        "cues": [],
+        "reliability": null,
+        "label": null
+      },
+      "prosody": {
+        "available": true,
+        "indicator": 57.0,
+        "sub_scores": {
+          "pauses": 100.0,
+          "pitch": 56.5,
+          "breathing": 0.0,
+          "tremor": 100.0,
+          "rate": 54.0,
+          "depth": 0.0
+        },
+        "cues": [
+          "Speech was frequently interrupted by pauses.",
+          "Unstable loudness (shimmer) indicating vocal tension.",
+          "Voice tremor (4-10 Hz amplitude modulation) detected.",
+          "Slow, effortful speech (~2.2 syllables/sec)."
+        ],
+        "reliability": null,
+        "label": null
+      },
+      "disfluency": {
+        "available": true,
+        "indicator": 12.0,
+        "sub_scores": {
+          "fillers": 0.0,
+          "repetitions": 0.0,
+          "restarts": 0.0,
+          "hedging": 0.0,
+          "fragments": 0.0,
+          "timing": 60.0
+        },
+        "cues": [],
+        "reliability": null,
+        "label": null
+      },
+      "tone": {
+        "available": false,
+        "indicator": 0.0,
+        "sub_scores": {},
+        "cues": [],
+        "reliability": null,
+        "label": "unavailable"
+      },
+      "behavior": {
+        "available": true,
+        "indicator": 17.6,
+        "sub_scores": {
+          "blinking": 10.0,
+          "gaze": 80.0,
+          "face_touch": 0.0,
+          "self_soothing": 0.0,
+          "fidgeting": 0.0,
+          "head_posture": 2.2,
+          "tension": 23.4,
+          "swallowing": 0.0,
+          "expression": 3.0
+        },
+        "cues": [
+          "Restless, darting gaze."
+        ],
+        "reliability": 0.72,
+        "label": null
+      },
+      "incongruence_flag": false,
+      "modalities_used": [
+        "text",
+        "voice",
+        "behavior"
+      ]
+    },
+    "voice_analysis": {
+      "acoustic": {
+        "available": true,
+        "duration": 5.82,
+        "sample_rate": 16000,
+        "rms": 0.01504,
+        "zero_crossing_rate": 0.07873,
+        "pitch_variability": 161.42
+      },
+      "prosody": {
+        "available": true,
+        "duration_sec": 5.82,
+        "speech_ratio": 0.55,
+        "pauses": {
+          "pause_count": 2,
+          "long_pause_count": 1,
+          "mean_pause_sec": 0.85,
+          "max_pause_sec": 1.15,
+          "pause_ratio": 0.329,
+          "pause_rate_per_min": 23.3,
+          "speech_time_sec": 3.2,
+          "leading_silence_sec": 0.67
+        },
+        "pitch": {
+          "available": true,
+          "f0_mean_hz": 142.9,
+          "f0_std_hz": 49.1,
+          "f0_cv": 0.344,
+          "f0_semitone_range": 18.19,
+          "f0_min_hz": 66.1,
+          "f0_max_hz": 207.6,
+          "jitter_local": 0.0069,
+          "pitch_drift_hz": -71.2,
+          "voiced_ratio": 0.2
+        },
+        "voice_quality": {
+          "shimmer_local": 0.1168,
+          "hnr_db": null,
+          "praat_used": false
+        },
+        "depth": {
+          "available": true,
+          "spectral_centroid_hz": 1298.2,
+          "low_band_ratio": 0.826,
+          "high_band_ratio": 0.044,
+          "voice_depth_index": 0.253
+        },
+        "breathing": {
+          "breath_count": 0,
+          "breath_rate_per_min": 0.0,
+          "breath_intensity": 0.0,
+          "mean_breath_duration_sec": 0.0,
+          "breath_interval_cv": 0.0
+        },
+        "tremor": {
+          "tremor_index": 0.506,
+          "amplitude_tremor": 0.506,
+          "frequency_tremor": 0.0,
+          "tremor_segments": 2
+        },
+        "rate": {
+          "syllable_count": 7,
+          "syllable_rate": 2.19
+        },
+        "tone": {
+          "available": false,
+          "error": "Recording too short for tone analysis."
+        }
+      },
+      "disfluency": {
+        "available": true,
+        "word_count": 1,
+        "sentence_count": 1,
+        "fillers": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "examples": []
+        },
+        "repetitions": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "stutters": [],
+          "examples": []
+        },
+        "restarts": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "examples": []
+        },
+        "hedging": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "examples": []
+        },
+        "fragments": {
+          "trailing_count": 0,
+          "short_fragment_count": 1,
+          "trailing_ratio": 0.0,
+          "examples": []
+        },
+        "timing": {
+          "available": true,
+          "segment_count": 1,
+          "hesitation_gap_count": 0,
+          "hesitation_gap_ratio": 0.0,
+          "max_gap_sec": 0.0,
+          "words_per_sec": 0.5,
+          "slow_segment_ratio": 1.0,
+          "low_confidence_ratio": 1.0
+        }
+      }
+    },
+    "behavior_analysis": {
+      "features": {
+        "available": true,
+        "extended": true,
+        "tracker": "browser-v6",
+        "duration_sec": 5.8,
+        "frames_analyzed": 117,
+        "fps": 20.2,
+        "face_detected_ratio": 1,
+        "hands_detected_ratio": 0,
+        "pose_detected_ratio": 1,
+        "blink_count": 2,
+        "blink_rate_per_min": 20.7,
+        "blink_burst_count": 0,
+        "blink_interval_cv": 0,
+        "gaze_aversion_ratio": 0.222,
+        "gaze_shift_rate_per_min": 175.9,
+        "eye_closure_ratio": 0.043,
+        "face_touch_count": 0,
+        "face_touch_duration_sec": 0,
+        "hand_movement_energy": 0,
+        "hand_fidget_rate_per_min": 0,
+        "hands_together_ratio": 0,
+        "hand_rub_count": 0,
+        "hand_rub_duration_sec": 0,
+        "finger_clasp_ratio": 0,
+        "arm_stroke_count": 0,
+        "arm_stroke_duration_sec": 0,
+        "self_hug_ratio": 0,
+        "neck_touch_count": 0,
+        "neck_touch_duration_sec": 0,
+        "hair_touch_count": 0,
+        "lip_bite_ratio": 0,
+        "swallow_count": 0,
+        "swallow_rate_per_min": 0,
+        "shoulder_raise_ratio": 0,
+        "shoulder_asymmetry": 0.094,
+        "jaw_clench_ratio": 0,
+        "freeze_ratio": 0,
+        "slouch_ratio": 0,
+        "lean_away_ratio": 0,
+        "head_movement_energy": 0.086,
+        "head_shake_rate_per_min": 0,
+        "posture_shift_count": 0,
+        "head_down_ratio": 0.034,
+        "expression": {
+          "brow_furrow": 0.003,
+          "brow_raise": 0.26,
+          "lip_press": 0.135,
+          "mouth_frown": 0,
+          "eye_squint": 0.164,
+          "jaw_tension": 0.011,
+          "smile": 0.027
+        },
+        "events": [],
+        "timeline": [
+          {
+            "t": 0,
+            "blink": 0,
+            "gaze_away": 0,
+            "self_touch": 0,
+            "hand_motion": 0,
+            "head_motion": 0.101,
+            "tension": 0,
+            "expression": 0.04
+          },
+          {
+            "t": 1,
+            "blink": 1,
+            "gaze_away": 0.15,
+            "self_touch": 0,
+            "hand_motion": 0,
+            "head_motion": 0.103,
+            "tension": 0,
+            "expression": 0.05
+          },
+          {
+            "t": 2,
+            "blink": 0,
+            "gaze_away": 0,
+            "self_touch": 0,
+            "hand_motion": 0,
+            "head_motion": 0.11,
+            "tension": 0,
+            "expression": 0.05
+          },
+          {
+            "t": 3,
+            "blink": 1,
+            "gaze_away": 0.45,
+            "self_touch": 0,
+            "hand_motion": 0,
+            "head_motion": 0.067,
+            "tension": 0,
+            "expression": 0.01
+          },
+          {
+            "t": 4,
+            "blink": 0,
+            "gaze_away": 0.7,
+            "self_touch": 0,
+            "hand_motion": 0,
+            "head_motion": 0.097,
+            "tension": 0,
+            "expression": 0.06
+          },
+          {
+            "t": 5,
+            "blink": 0,
+            "gaze_away": 0,
+            "self_touch": 0,
+            "hand_motion": 0,
+            "head_motion": 0.025,
+            "tension": 0,
+            "expression": 0.07
+          }
+        ]
+      },
+      "result": {
+        "available": true,
+        "indicator": 17.6,
+        "raw_indicator": 24.4,
+        "reliability": 0.72,
+        "quality_notes": [
+          "Short capture; behavioural rates are approximate."
+        ],
+        "sub_scores": {
+          "blinking": 10.0,
+          "gaze": 80.0,
+          "face_touch": 0.0,
+          "self_soothing": 0.0,
+          "fidgeting": 0.0,
+          "head_posture": 2.2,
+          "tension": 23.4,
+          "swallowing": 0.0,
+          "expression": 3.0
+        },
+        "cues": [
+          "Restless, darting gaze."
+        ],
+        "tracked_groups": [
+          "blinking",
+          "expression",
+          "face_touch",
+          "gaze",
+          "head_posture",
+          "swallowing",
+          "tension"
+        ],
+        "event_count": 0
+      }
+    },
+    "narrative_context": {
+      "available": true,
+      "engine": "context",
+      "indicator": 0.0,
+      "adjustment": 0.0,
+      "sub_scores": {
+        "escalation": 0.0,
+        "fragmentation": 0.0,
+        "rumination": 0.0,
+        "immediacy": 0.0,
+        "helplessness": 0.0,
+        "absolutism": 0.0,
+        "self_focus": 0.0
+      },
+      "cues": [],
+      "signals": {},
+      "discourse": {
+        "sentence_count": 1,
+        "word_count": 1,
+        "escalation_slope": 0.0,
+        "trajectory": "steady",
+        "peak_position": null,
+        "fragmentation": null,
+        "rumination": null,
+        "immediacy_ratio": 0.0,
+        "helplessness_count": 0,
+        "helplessness_per_100w": 0.0,
+        "absolutist_count": 0,
+        "absolutist_per_100w": 0.0,
+        "first_person_ratio": 0.0,
+        "contrast_count": 0,
+        "safety_claim_count": 0,
+        "hedged_safety": false
+      }
+    },
+    "transcript": "bfg",
+    "narrative": null,
+    "media": {
+      "kind": "video",
+      "filename": "recording.webm",
+      "stored_name": "SAH-2026-536179.webm",
+      "content_type": "video/webm;codecs=vp8,opus",
+      "size": 772863,
+      "url": "/api/cases/SAH-2026-536179/media"
+    },
+    "timeline": [
+      {
+        "event": "CASE_CREATED",
+        "timestamp": "2026-09-09T21:01:12.533008+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-2026-472531",
+    "svi_score": 6.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-09T20:58:51.843065+00:00",
+    "updated_at": "2026-09-09T20:58:51.848077+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 0.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators.",
+      "The narrative was also read as a whole (cross-sentence context and discourse structure); narrative stress index 0/100.",
+      "Voice delivery (pitch, pauses, breathing, tremor, pace, tone, fumbling) was analysed over the whole recording as a supplementary indicator (voice indicator 40/100, adjustment +6.0, tone: escalating).",
+      "Voice: Speech was frequently interrupted by pauses.",
+      "Voice: Highly variable pitch across the statement.",
+      "Voice: Unstable loudness (shimmer) indicating vocal tension.",
+      "Voice: Voice tremor (4-10 Hz amplitude modulation) detected.",
+      "Tone: The voice became faster as the account went on (rising arousal).",
+      "Tone: Emotional arousal escalated steadily over the recording."
+    ],
+    "evidence": [],
+    "recommendations": [
+      "Complete standard human review of the assessment."
+    ],
+    "capture_mode": "voice",
+    "modalities": {
+      "text_svi": 0.0,
+      "fused_svi": 6.0,
+      "fusion_method": "text_primary+voice",
+      "voice_indicator": 39.9,
+      "behavior_indicator": 0.0,
+      "voice_adjustment": 6.0,
+      "behavior_adjustment": 0.0,
+      "acoustic": {
+        "available": true,
+        "indicator": 53.7,
+        "sub_scores": {
+          "rms": 1.3,
+          "zero_crossing_rate": 16.5,
+          "pitch_variability": 100.0
+        },
+        "cues": [],
+        "reliability": null,
+        "label": null
+      },
+      "prosody": {
+        "available": true,
+        "indicator": 49.2,
+        "sub_scores": {
+          "pauses": 84.4,
+          "pitch": 61.1,
+          "breathing": 0.0,
+          "tremor": 100.0,
+          "rate": 0.0,
+          "depth": 0.0
+        },
+        "cues": [
+          "Speech was frequently interrupted by pauses.",
+          "Highly variable pitch across the statement.",
+          "Unstable loudness (shimmer) indicating vocal tension.",
+          "Voice tremor (4-10 Hz amplitude modulation) detected."
+        ],
+        "reliability": null,
+        "label": null
+      },
+      "disfluency": {
+        "available": true,
+        "indicator": 12.0,
+        "sub_scores": {
+          "fillers": 0.0,
+          "repetitions": 0.0,
+          "restarts": 0.0,
+          "hedging": 0.0,
+          "fragments": 0.0,
+          "timing": 60.0
+        },
+        "cues": [],
+        "reliability": null,
+        "label": null
+      },
+      "tone": {
+        "available": true,
+        "indicator": 46.0,
+        "sub_scores": {
+          "arousal": 100.0,
+          "flatness": 50.0,
+          "strain": 0.0,
+          "instability": 14.0,
+          "trajectory": 41.2
+        },
+        "cues": [
+          "The voice became faster as the account went on (rising arousal).",
+          "Emotional arousal escalated steadily over the recording."
+        ],
+        "reliability": null,
+        "label": "escalating"
+      },
+      "behavior": {
+        "available": false,
+        "indicator": 0.0,
+        "sub_scores": {},
+        "cues": [],
+        "reliability": null,
+        "label": null
+      },
+      "incongruence_flag": false,
+      "modalities_used": [
+        "text",
+        "voice"
+      ]
+    },
+    "voice_analysis": {
+      "acoustic": {
+        "available": true,
+        "duration": 7.44,
+        "sample_rate": 48000,
+        "rms": 0.01251,
+        "zero_crossing_rate": 0.04128,
+        "pitch_variability": 405.44
+      },
+      "prosody": {
+        "available": true,
+        "duration_sec": 7.44,
+        "speech_ratio": 0.758,
+        "pauses": {
+          "pause_count": 2,
+          "long_pause_count": 0,
+          "mean_pause_sec": 0.6,
+          "max_pause_sec": 0.75,
+          "pause_ratio": 0.175,
+          "pause_rate_per_min": 17.5,
+          "speech_time_sec": 5.64,
+          "leading_silence_sec": 0.02
+        },
+        "pitch": {
+          "available": true,
+          "f0_mean_hz": 92.3,
+          "f0_std_hz": 34.8,
+          "f0_cv": 0.377,
+          "f0_semitone_range": 14.9,
+          "f0_min_hz": 65.0,
+          "f0_max_hz": 162.8,
+          "jitter_local": 0.008,
+          "pitch_drift_hz": -13.9,
+          "voiced_ratio": 0.317
+        },
+        "voice_quality": {
+          "shimmer_local": 0.1299,
+          "hnr_db": null,
+          "praat_used": false
+        },
+        "depth": {
+          "available": true,
+          "spectral_centroid_hz": 1352.9,
+          "low_band_ratio": 0.836,
+          "high_band_ratio": 0.049,
+          "voice_depth_index": 0.273
+        },
+        "breathing": {
+          "breath_count": 0,
+          "breath_rate_per_min": 0.0,
+          "breath_intensity": 0.0,
+          "mean_breath_duration_sec": 0.0,
+          "breath_interval_cv": 0.0
+        },
+        "tremor": {
+          "tremor_index": 0.5,
+          "amplitude_tremor": 0.5,
+          "frequency_tremor": 0.0,
+          "tremor_segments": 3
+        },
+        "rate": {
+          "syllable_count": 18,
+          "syllable_rate": 3.19
+        },
+        "tone": {
+          "available": true,
+          "window_sec": 3.0,
+          "window_count": 3,
+          "f0_rise_semitones": -0.6,
+          "energy_rise_ratio": -0.061,
+          "rate_rise_ratio": 0.886,
+          "fade_ratio": 0.939,
+          "energy_cv": 0.027,
+          "rate_cv": 0.249,
+          "pitch_cv_semitones": 0.26,
+          "f0_semitone_range": 14.9,
+          "hnr_db": null,
+          "spectral_flatness": 0.016,
+          "trail_off_ratio": 0.0,
+          "burst_ratio": 0.0,
+          "arousal_mean": 0.102,
+          "arousal_slope": 0.0794,
+          "arousal_range": 0.159,
+          "trajectory": "escalating",
+          "timeline": [
+            {
+              "t": 0.0,
+              "energy": 0.0313,
+              "pitch_st": 0.5,
+              "rate": 2.57,
+              "pause_ratio": 0.093,
+              "arousal": 0.0
+            },
+            {
+              "t": 1.5,
+              "energy": 0.0309,
+              "pitch_st": 0.0,
+              "rate": 4.31,
+              "pause_ratio": 0.15,
+              "arousal": 0.147
+            },
+            {
+              "t": 3.0,
+              "energy": 0.0294,
+              "pitch_st": -0.1,
+              "rate": 4.85,
+              "pause_ratio": 0.313,
+              "arousal": 0.159
+            }
+          ]
+        }
+      },
+      "disfluency": {
+        "available": true,
+        "word_count": 14,
+        "sentence_count": 1,
+        "fillers": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "examples": []
+        },
+        "repetitions": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "stutters": [],
+          "examples": []
+        },
+        "restarts": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "examples": []
+        },
+        "hedging": {
+          "count": 0,
+          "per_100_words": 0.0,
+          "examples": []
+        },
+        "fragments": {
+          "trailing_count": 0,
+          "short_fragment_count": 0,
+          "trailing_ratio": 0.0,
+          "examples": []
+        },
+        "timing": {
+          "available": true,
+          "segment_count": 3,
+          "hesitation_gap_count": 0,
+          "hesitation_gap_ratio": 0.0,
+          "max_gap_sec": 0.14,
+          "words_per_sec": 2.51,
+          "slow_segment_ratio": 0.0,
+          "low_confidence_ratio": 1.0
+        }
+      }
+    },
+    "behavior_analysis": null,
+    "narrative_context": {
+      "available": true,
+      "engine": "context",
+      "indicator": 0.0,
+      "adjustment": 0.0,
+      "sub_scores": {
+        "escalation": 0.0,
+        "fragmentation": 0.0,
+        "rumination": 0.0,
+        "immediacy": 0.0,
+        "helplessness": 0.0,
+        "absolutism": 0.0,
+        "self_focus": 0.0
+      },
+      "cues": [],
+      "signals": {},
+      "discourse": {
+        "sentence_count": 1,
+        "word_count": 14,
+        "escalation_slope": 0.0,
+        "trajectory": "steady",
+        "peak_position": null,
+        "fragmentation": null,
+        "rumination": null,
+        "immediacy_ratio": 0.0,
+        "helplessness_count": 0,
+        "helplessness_per_100w": 0.0,
+        "absolutist_count": 0,
+        "absolutist_per_100w": 0.0,
+        "first_person_ratio": 0.071,
+        "contrast_count": 0,
+        "safety_claim_count": 0,
+        "hedged_safety": false
+      }
+    },
+    "transcript": "they eat the time people come to me they try to put him in",
+    "narrative": null,
+    "media": {
+      "kind": "audio",
+      "filename": "recording.webm",
+      "stored_name": "SAH-2026-472531.webm",
+      "content_type": "audio/webm",
+      "size": 120057,
+      "url": "/api/cases/SAH-2026-472531/media"
+    },
+    "timeline": [
+      {
+        "event": "CASE_CREATED",
+        "timestamp": "2026-09-09T20:58:51.843065+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-2026-992607",
+    "svi_score": 26.8,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-09T20:50:41.110502+00:00",
+    "updated_at": "2026-09-09T20:50:41.110502+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 80.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 40.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "HIGH",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "LOW",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a MODERATE risk classification based on detected vulnerability indicators.",
+      "Immediate Threat indicators were detected at an elevated level (80/100).",
+      "Potential immediate safety indicators were detected and require human review.",
+      "The narrative was also read as a whole (cross-sentence context and discourse structure); narrative stress index 1/100.",
+      "Narrative: Reading the passage as a whole indicates immediate threat (context similarity 0.72).",
+      "Narrative: Reading the passage as a whole indicates intimidation (context similarity 0.61)."
+    ],
+    "evidence": [
+      {
+        "text": "they are trying to kill me",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "they are trying to kill me",
+        "signal": "Intimidation"
+      }
+    ],
+    "recommendations": [
+      "Prioritize immediate human safety review.",
+      "Follow the authorized responder's established escalation protocol."
+    ],
+    "capture_mode": "text",
+    "modalities": null,
+    "voice_analysis": null,
+    "behavior_analysis": null,
+    "narrative_context": {
+      "available": true,
+      "engine": "context",
+      "indicator": 0.7,
+      "adjustment": 0.0,
+      "sub_scores": {
+        "escalation": 0.0,
+        "fragmentation": 0.0,
+        "rumination": 0.0,
+        "immediacy": 0.0,
+        "helplessness": 0.0,
+        "absolutism": 0.0,
+        "self_focus": 37.2
+      },
+      "cues": [
+        "Reading the passage as a whole indicates immediate threat (context similarity 0.72).",
+        "Reading the passage as a whole indicates intimidation (context similarity 0.61)."
+      ],
+      "signals": {
+        "immediate_threat": {
+          "score": 80.0,
+          "similarity": 0.716,
+          "level": "passage",
+          "evidence": "they are trying to kill me"
+        },
+        "intimidation": {
+          "score": 40.0,
+          "similarity": 0.611,
+          "level": "passage",
+          "evidence": "they are trying to kill me"
+        }
+      },
+      "discourse": {
+        "sentence_count": 1,
+        "word_count": 6,
+        "escalation_slope": 0.0,
+        "trajectory": "steady",
+        "peak_position": null,
+        "fragmentation": null,
+        "rumination": null,
+        "immediacy_ratio": 0.0,
+        "helplessness_count": 0,
+        "helplessness_per_100w": 0.0,
+        "absolutist_count": 0,
+        "absolutist_per_100w": 0.0,
+        "first_person_ratio": 0.167,
+        "contrast_count": 0,
+        "safety_claim_count": 0,
+        "hedged_safety": false
+      }
+    },
+    "transcript": null,
+    "narrative": "they are trying to kill me",
+    "media": null,
+    "timeline": [
+      {
+        "event": "CASE_CREATED",
+        "timestamp": "2026-09-09T20:50:41.110502+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      }
+    ]
+  }
+]

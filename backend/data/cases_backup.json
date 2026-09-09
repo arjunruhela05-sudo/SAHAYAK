@@ -1,0 +1,1975 @@
+[
+  {
+    "case_id": "SAH-AUDIO-001",
+    "svi_score": 24.8,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.569552+00:00",
+    "updated_at": "2026-09-04T21:01:01.569552+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 40.0,
+      "immediate_threat": 0.0,
+      "distress": 40.0,
+      "isolation": 65.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "LOW",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "LOW",
+      "isolation": "MODERATE",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators.",
+      "Isolation indicators were detected at an elevated level (65/100).",
+      "Acoustic voice features were used as supplementary indicators."
+    ],
+    "evidence": [
+      {
+        "text": "i am scared",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared and I have nobody to help me.",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared and I have nobody to help me.",
+        "signal": "Distress"
+      },
+      {
+        "text": "i have nobody",
+        "signal": "Isolation"
+      },
+      {
+        "text": "nobody to help me",
+        "signal": "Isolation"
+      },
+      {
+        "text": "I am scared and I have nobody to help me.",
+        "signal": "Isolation"
+      }
+    ],
+    "recommendations": [
+      "Assess available family, community, or support-network options."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.569552+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.569552+00:00",
+        "description": "AI assessment completed with SVI 24.8/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "E2E-001",
+    "svi_score": 60.6,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.320582+00:00",
+    "updated_at": "2026-09-04T21:01:01.320582+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 90.0,
+      "immediate_threat": 80.0,
+      "distress": 0.0,
+      "isolation": 90.0,
+      "intimidation": 80.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "HIGH",
+      "immediate_threat": "HIGH",
+      "distress": "NOT_DETECTED",
+      "isolation": "HIGH",
+      "intimidation": "HIGH",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a HIGH risk classification based on detected vulnerability indicators.",
+      "Fear indicators were detected at an elevated level (90/100).",
+      "Immediate Threat indicators were detected at an elevated level (80/100).",
+      "Isolation indicators were detected at an elevated level (90/100).",
+      "Intimidation indicators were detected at an elevated level (80/100).",
+      "Potential immediate safety indicators were detected and require human review."
+    ],
+    "evidence": [
+      {
+        "text": "i am afraid",
+        "signal": "Fear"
+      },
+      {
+        "text": "i feel unsafe",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am afraid because the person threatened me and I feel unsafe.",
+        "signal": "Fear"
+      },
+      {
+        "text": "threatened me",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "I am afraid because the person threatened me and I feel unsafe.",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "isolated from my family",
+        "signal": "Isolation"
+      },
+      {
+        "text": "I have been isolated from my family.",
+        "signal": "Isolation"
+      },
+      {
+        "text": "threatened me",
+        "signal": "Intimidation"
+      },
+      {
+        "text": "I am afraid because the person threatened me and I feel unsafe.",
+        "signal": "Intimidation"
+      }
+    ],
+    "recommendations": [
+      "Prioritize immediate human safety review.",
+      "Follow the authorized responder's established escalation protocol.",
+      "Prioritize the case for human review.",
+      "Assess available family, community, or support-network options.",
+      "Review potential coercion or intimidation indicators with an authorized responder."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.320582+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.320582+00:00",
+        "description": "AI assessment completed with SVI 60.6/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-HIGH",
+    "svi_score": 80.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.286086+00:00",
+    "updated_at": "2026-09-04T21:01:01.286086+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.286086+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.286086+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-CRITICAL",
+    "svi_score": 70.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.279087+00:00",
+    "updated_at": "2026-09-04T21:01:01.279087+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.279087+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.279087+00:00",
+        "description": "AI assessment completed with SVI 70.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-LOW",
+    "svi_score": 90.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.275087+00:00",
+    "updated_at": "2026-09-04T21:01:01.275087+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.275087+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.275087+00:00",
+        "description": "AI assessment completed with SVI 90.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-STATUS-002",
+    "svi_score": 60.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.251612+00:00",
+    "updated_at": "2026-09-04T21:01:01.265086+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.251612+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.251612+00:00",
+        "description": "AI assessment completed with SVI 60.0/100 and HIGH risk."
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:01.256600+00:00",
+        "description": "Case status changed from NEW to UNDER_REVIEW.",
+        "status": "UNDER_REVIEW"
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:01.260598+00:00",
+        "description": "Case status changed from UNDER_REVIEW to RESOLVED.",
+        "status": "RESOLVED"
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:01.265086+00:00",
+        "description": "Case status changed from RESOLVED to NEW.",
+        "status": "NEW"
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-STATUS-001",
+    "svi_score": 60.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:01.240846+00:00",
+    "updated_at": "2026-09-04T21:01:01.240846+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:01.240846+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:01.240846+00:00",
+        "description": "AI assessment completed with SVI 60.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-009",
+    "svi_score": 40.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.979802+00:00",
+    "updated_at": "2026-09-04T21:01:00.979802+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.979802+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.979802+00:00",
+        "description": "AI assessment completed with SVI 40.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-008",
+    "svi_score": 60.0,
+    "risk_level": "HIGH",
+    "status": "UNDER_REVIEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.962802+00:00",
+    "updated_at": "2026-09-04T21:01:00.967809+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.962802+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.962802+00:00",
+        "description": "AI assessment completed with SVI 60.0/100 and HIGH risk."
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.967809+00:00",
+        "description": "Case status changed from NEW to UNDER_REVIEW.",
+        "status": "UNDER_REVIEW"
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-007",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.949804+00:00",
+    "updated_at": "2026-09-04T21:01:00.949804+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.949804+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.949804+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-006",
+    "svi_score": 85.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.944809+00:00",
+    "updated_at": "2026-09-04T21:01:00.944809+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.944809+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.944809+00:00",
+        "description": "AI assessment completed with SVI 85.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-005",
+    "svi_score": 30.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.930803+00:00",
+    "updated_at": "2026-09-04T21:01:00.930803+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.930803+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.930803+00:00",
+        "description": "AI assessment completed with SVI 30.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-004",
+    "svi_score": 30.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.925810+00:00",
+    "updated_at": "2026-09-04T21:01:00.925810+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.925810+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.925810+00:00",
+        "description": "AI assessment completed with SVI 30.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-003",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.907804+00:00",
+    "updated_at": "2026-09-04T21:01:00.907804+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.907804+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.907804+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-002",
+    "svi_score": 50.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.891804+00:00",
+    "updated_at": "2026-09-04T21:01:00.891804+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.891804+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.891804+00:00",
+        "description": "AI assessment completed with SVI 50.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-API-001",
+    "svi_score": 72.5,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.878804+00:00",
+    "updated_at": "2026-09-04T21:01:00.878804+00:00",
+    "language": "en",
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.878804+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.878804+00:00",
+        "description": "AI assessment completed with SVI 72.5/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-SVI-HIGH",
+    "svi_score": 85.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.866804+00:00",
+    "updated_at": "2026-09-04T21:01:00.866804+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.866804+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.866804+00:00",
+        "description": "AI assessment completed with SVI 85.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-SVI-LOW",
+    "svi_score": 55.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.863804+00:00",
+    "updated_at": "2026-09-04T21:01:00.863804+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.863804+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.863804+00:00",
+        "description": "AI assessment completed with SVI 55.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-PRIORITY-HIGH",
+    "svi_score": 80.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.852679+00:00",
+    "updated_at": "2026-09-04T21:01:00.852679+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.852679+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.852679+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-PRIORITY-CRITICAL",
+    "svi_score": 75.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.850678+00:00",
+    "updated_at": "2026-09-04T21:01:00.850678+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.850678+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.850678+00:00",
+        "description": "AI assessment completed with SVI 75.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-PRIORITY-LOW",
+    "svi_score": 90.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.847680+00:00",
+    "updated_at": "2026-09-04T21:01:00.847680+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.847680+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.847680+00:00",
+        "description": "AI assessment completed with SVI 90.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-STATUS-003",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "UNDER_REVIEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.835678+00:00",
+    "updated_at": "2026-09-04T21:01:00.839678+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.835678+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.835678+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.836678+00:00",
+        "description": "Case status changed from NEW to CLOSED.",
+        "status": "CLOSED"
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.839678+00:00",
+        "description": "Case status changed from CLOSED to UNDER_REVIEW.",
+        "status": "UNDER_REVIEW"
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-STATUS-002",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.820679+00:00",
+    "updated_at": "2026-09-04T21:01:00.826681+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.820679+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.820679+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.822678+00:00",
+        "description": "Case status changed from NEW to UNDER_REVIEW.",
+        "status": "UNDER_REVIEW"
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.824681+00:00",
+        "description": "Case status changed from UNDER_REVIEW to RESOLVED.",
+        "status": "RESOLVED"
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.826681+00:00",
+        "description": "Case status changed from RESOLVED to NEW.",
+        "status": "NEW"
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-STATUS-001",
+    "svi_score": 40.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.814680+00:00",
+    "updated_at": "2026-09-04T21:01:00.814680+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.814680+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.814680+00:00",
+        "description": "AI assessment completed with SVI 40.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-102",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.805679+00:00",
+    "updated_at": "2026-09-04T21:01:00.805679+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.805679+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.805679+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-101",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.803681+00:00",
+    "updated_at": "2026-09-04T21:01:00.803681+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.803681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.803681+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-200",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.798678+00:00",
+    "updated_at": "2026-09-04T21:01:00.798678+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.798678+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.798678+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-100",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.796681+00:00",
+    "updated_at": "2026-09-04T21:01:00.796681+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.796681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.796681+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-006",
+    "svi_score": 40.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.782681+00:00",
+    "updated_at": "2026-09-04T21:01:00.782681+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.782681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.782681+00:00",
+        "description": "AI assessment completed with SVI 40.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-005",
+    "svi_score": 60.0,
+    "risk_level": "HIGH",
+    "status": "UNDER_REVIEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.766678+00:00",
+    "updated_at": "2026-09-04T21:01:00.769679+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.766678+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.766678+00:00",
+        "description": "AI assessment completed with SVI 60.0/100 and HIGH risk."
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:01:00.769679+00:00",
+        "description": "Case status changed from NEW to UNDER_REVIEW.",
+        "status": "UNDER_REVIEW"
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-004",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.757681+00:00",
+    "updated_at": "2026-09-04T21:01:00.757681+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.757681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.757681+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-003",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.754682+00:00",
+    "updated_at": "2026-09-04T21:01:00.754682+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.754682+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.754682+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-002",
+    "svi_score": 30.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.745681+00:00",
+    "updated_at": "2026-09-04T21:01:00.745681+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.745681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.745681+00:00",
+        "description": "AI assessment completed with SVI 30.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-001",
+    "svi_score": 72.5,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.733683+00:00",
+    "updated_at": "2026-09-04T21:01:00.733683+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 80,
+      "immediate_threat": 50
+    },
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.733683+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.733683+00:00",
+        "description": "AI assessment completed with SVI 72.5/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-INTEGRATION-002",
+    "svi_score": 0.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.715680+00:00",
+    "updated_at": "2026-09-04T21:01:00.715680+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 0.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators."
+    ],
+    "evidence": [],
+    "recommendations": [
+      "Complete standard human review of the assessment."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.715680+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.715680+00:00",
+        "description": "AI assessment completed with SVI 0.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-INTEGRATION-001",
+    "svi_score": 34.2,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.686679+00:00",
+    "updated_at": "2026-09-04T21:01:00.686679+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 65.0,
+      "immediate_threat": 0.0,
+      "distress": 65.0,
+      "isolation": 90.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "MODERATE",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "MODERATE",
+      "isolation": "HIGH",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a MODERATE risk classification based on detected vulnerability indicators.",
+      "Fear indicators were detected at an elevated level (65/100).",
+      "Distress indicators were detected at an elevated level (65/100).",
+      "Isolation indicators were detected at an elevated level (90/100)."
+    ],
+    "evidence": [
+      {
+        "text": "i am scared",
+        "signal": "Fear"
+      },
+      {
+        "text": "scared to go home",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared to go home.",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared to go home.",
+        "signal": "Distress"
+      },
+      {
+        "text": "i have nobody",
+        "signal": "Isolation"
+      },
+      {
+        "text": "nobody to help me",
+        "signal": "Isolation"
+      },
+      {
+        "text": "I have nobody to help me.",
+        "signal": "Isolation"
+      }
+    ],
+    "recommendations": [
+      "Assess available family, community, or support-network options.",
+      "Consider appropriate psychosocial support or referral based on human assessment."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.686679+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.686679+00:00",
+        "description": "AI assessment completed with SVI 34.2/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-AI-V22-NEG-001",
+    "svi_score": 0.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.653678+00:00",
+    "updated_at": "2026-09-04T21:01:00.653678+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 0.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators."
+    ],
+    "evidence": [],
+    "recommendations": [
+      "Complete standard human review of the assessment."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.653678+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.653678+00:00",
+        "description": "AI assessment completed with SVI 0.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-AI-V22-HI-001",
+    "svi_score": 92.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.616681+00:00",
+    "updated_at": "2026-09-04T21:01:00.616681+00:00",
+    "language": "hi",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 92.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 65.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "HIGH",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "MODERATE",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a CRITICAL risk classification based on detected vulnerability indicators.",
+      "Immediate Threat indicators were detected at an elevated level (92/100).",
+      "Intimidation indicators were detected at an elevated level (65/100).",
+      "Potential immediate safety indicators were detected and require human review."
+    ],
+    "evidence": [
+      {
+        "text": "उन्होंने मुझे और मेरे परिवार को जान से मारने की धमकी दी है",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "उन्होंने मुझे और मेरे परिवार को जान से मारने की धमकी दी है",
+        "signal": "Intimidation"
+      }
+    ],
+    "recommendations": [
+      "Prioritize immediate human safety review.",
+      "Follow the authorized responder's established escalation protocol.",
+      "Prioritize the case for human review.",
+      "Review potential coercion or intimidation indicators with an authorized responder."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.616681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.616681+00:00",
+        "description": "AI assessment completed with SVI 92.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-AI-V21-LETHAL-001",
+    "svi_score": 96.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.582679+00:00",
+    "updated_at": "2026-09-04T21:01:00.582679+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 96.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 65.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "HIGH",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "MODERATE",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a CRITICAL risk classification based on detected vulnerability indicators.",
+      "Immediate Threat indicators were detected at an elevated level (96/100).",
+      "Intimidation indicators were detected at an elevated level (65/100).",
+      "Potential immediate safety indicators were detected and require human review."
+    ],
+    "evidence": [
+      {
+        "text": "they have said that they will kill me tomorrow",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "they have said that they will kill me tomorrow",
+        "signal": "Intimidation"
+      }
+    ],
+    "recommendations": [
+      "Prioritize immediate human safety review.",
+      "Follow the authorized responder's established escalation protocol.",
+      "Prioritize the case for human review.",
+      "Review potential coercion or intimidation indicators with an authorized responder."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.582679+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.582679+00:00",
+        "description": "AI assessment completed with SVI 96.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SECURITY-001",
+    "svi_score": 0.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.555680+00:00",
+    "updated_at": "2026-09-04T21:01:00.555680+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 0.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators."
+    ],
+    "evidence": [],
+    "recommendations": [
+      "Complete standard human review of the assessment."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.555680+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.555680+00:00",
+        "description": "AI assessment completed with SVI 0.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-AUTO-004",
+    "svi_score": 49.0,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.539681+00:00",
+    "updated_at": "2026-09-04T21:01:00.539681+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 90.0,
+      "immediate_threat": 40.0,
+      "distress": 65.0,
+      "isolation": 0.0,
+      "intimidation": 65.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "HIGH",
+      "immediate_threat": "LOW",
+      "distress": "MODERATE",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "MODERATE",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a MODERATE risk classification based on detected vulnerability indicators.",
+      "Fear indicators were detected at an elevated level (90/100).",
+      "Distress indicators were detected at an elevated level (65/100).",
+      "Intimidation indicators were detected at an elevated level (65/100).",
+      "Potential immediate safety indicators were detected and require human review."
+    ],
+    "evidence": [
+      {
+        "text": "i am scared",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared.",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared.",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "I am scared.",
+        "signal": "Distress"
+      },
+      {
+        "text": "I am scared.",
+        "signal": "Intimidation"
+      }
+    ],
+    "recommendations": [
+      "Prioritize immediate human safety review.",
+      "Follow the authorized responder's established escalation protocol.",
+      "Review potential coercion or intimidation indicators with an authorized responder.",
+      "Consider appropriate psychosocial support or referral based on human assessment."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.539681+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.539681+00:00",
+        "description": "AI assessment completed with SVI 49.0/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-AUTO-003",
+    "svi_score": 16.2,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.512679+00:00",
+    "updated_at": "2026-09-04T21:01:00.512679+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 0.0,
+      "immediate_threat": 65.0,
+      "distress": 0.0,
+      "isolation": 0.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "NOT_DETECTED",
+      "immediate_threat": "MODERATE",
+      "distress": "NOT_DETECTED",
+      "isolation": "NOT_DETECTED",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a LOW risk classification based on detected vulnerability indicators.",
+      "Immediate Threat indicators were detected at an elevated level (65/100).",
+      "Potential immediate safety indicators were detected and require human review."
+    ],
+    "evidence": [
+      {
+        "text": "threatened to hurt me",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "he is outside",
+        "signal": "Immediate Threat"
+      },
+      {
+        "text": "He threatened to hurt me and he is outside my home.",
+        "signal": "Immediate Threat"
+      }
+    ],
+    "recommendations": [
+      "Prioritize immediate human safety review.",
+      "Follow the authorized responder's established escalation protocol."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.512679+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.512679+00:00",
+        "description": "AI assessment completed with SVI 16.2/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "SAH-AUTO-001",
+    "svi_score": 26.7,
+    "risk_level": "MODERATE",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:01:00.471678+00:00",
+    "updated_at": "2026-09-04T21:01:00.471678+00:00",
+    "language": "en",
+    "signals": {
+      "fear": 65.0,
+      "immediate_threat": 0.0,
+      "distress": 40.0,
+      "isolation": 65.0,
+      "intimidation": 0.0,
+      "self_harm": 0.0
+    },
+    "vulnerability_profile": {
+      "fear": "MODERATE",
+      "immediate_threat": "NOT_DETECTED",
+      "distress": "LOW",
+      "isolation": "MODERATE",
+      "intimidation": "NOT_DETECTED",
+      "self_harm": "NOT_DETECTED"
+    },
+    "explanation": [
+      "The text assessment produced a MODERATE risk classification based on detected vulnerability indicators.",
+      "Fear indicators were detected at an elevated level (65/100).",
+      "Isolation indicators were detected at an elevated level (65/100)."
+    ],
+    "evidence": [
+      {
+        "text": "i am scared",
+        "signal": "Fear"
+      },
+      {
+        "text": "scared to go home",
+        "signal": "Fear"
+      },
+      {
+        "text": "I am scared to go home and I have nobody to help me.",
+        "signal": "Distress"
+      },
+      {
+        "text": "i have nobody",
+        "signal": "Isolation"
+      },
+      {
+        "text": "nobody to help me",
+        "signal": "Isolation"
+      },
+      {
+        "text": "I am scared to go home and I have nobody to help me.",
+        "signal": "Isolation"
+      }
+    ],
+    "recommendations": [
+      "Assess available family, community, or support-network options."
+    ],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:01:00.471678+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:01:00.471678+00:00",
+        "description": "AI assessment completed with SVI 26.7/100 and MODERATE risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-009",
+    "svi_score": 75.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.853098+00:00",
+    "updated_at": "2026-09-04T21:00:44.853098+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.853098+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.853098+00:00",
+        "description": "AI assessment completed with SVI 75.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-008",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.848715+00:00",
+    "updated_at": "2026-09-04T21:00:44.848715+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.848715+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.848715+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-007",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.846350+00:00",
+    "updated_at": "2026-09-04T21:00:44.846350+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.846350+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.846350+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-006",
+    "svi_score": 70.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.842255+00:00",
+    "updated_at": "2026-09-04T21:00:44.842255+00:00",
+    "language": null,
+    "signals": {
+      "fear": 80,
+      "immediate_threat": 50,
+      "distress": 10,
+      "isolation": 60,
+      "intimidation": 0,
+      "self_harm": 0
+    },
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.842255+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.842255+00:00",
+        "description": "AI assessment completed with SVI 70.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-005",
+    "svi_score": 30.0,
+    "risk_level": "MODERATE",
+    "status": "UNDER_REVIEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.837253+00:00",
+    "updated_at": "2026-09-04T21:00:44.838245+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.837253+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.837253+00:00",
+        "description": "AI assessment completed with SVI 30.0/100 and MODERATE risk."
+      },
+      {
+        "event": "Status updated",
+        "timestamp": "2026-09-04T21:00:44.838245+00:00",
+        "description": "Case status changed from NEW to UNDER_REVIEW.",
+        "status": "UNDER_REVIEW"
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-004",
+    "svi_score": 50.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.836253+00:00",
+    "updated_at": "2026-09-04T21:00:44.836253+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.836253+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.836253+00:00",
+        "description": "AI assessment completed with SVI 50.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-003",
+    "svi_score": 20.0,
+    "risk_level": "LOW",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.831247+00:00",
+    "updated_at": "2026-09-04T21:00:44.831247+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.831247+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.831247+00:00",
+        "description": "AI assessment completed with SVI 20.0/100 and LOW risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-002",
+    "svi_score": 60.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.831247+00:00",
+    "updated_at": "2026-09-04T21:00:44.831247+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.831247+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.831247+00:00",
+        "description": "AI assessment completed with SVI 60.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "ANALYTICS-001",
+    "svi_score": 90.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.830254+00:00",
+    "updated_at": "2026-09-04T21:00:44.830254+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.830254+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.830254+00:00",
+        "description": "AI assessment completed with SVI 90.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "API-ANALYTICS-003",
+    "svi_score": 70.0,
+    "risk_level": "HIGH",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.782558+00:00",
+    "updated_at": "2026-09-04T21:00:44.782558+00:00",
+    "language": null,
+    "signals": {
+      "fear": 80,
+      "immediate_threat": 60,
+      "distress": 10,
+      "isolation": 40,
+      "intimidation": 0,
+      "self_harm": 0
+    },
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.782558+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.782558+00:00",
+        "description": "AI assessment completed with SVI 70.0/100 and HIGH risk."
+      }
+    ]
+  },
+  {
+    "case_id": "API-ANALYTICS-002",
+    "svi_score": 80.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.716085+00:00",
+    "updated_at": "2026-09-04T21:00:44.716085+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.716085+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.716085+00:00",
+        "description": "AI assessment completed with SVI 80.0/100 and CRITICAL risk."
+      }
+    ]
+  },
+  {
+    "case_id": "API-ANALYTICS-001",
+    "svi_score": 90.0,
+    "risk_level": "CRITICAL",
+    "status": "NEW",
+    "human_review_required": true,
+    "created_at": "2026-09-04T21:00:44.711085+00:00",
+    "updated_at": "2026-09-04T21:00:44.711085+00:00",
+    "language": null,
+    "signals": {},
+    "vulnerability_profile": {},
+    "explanation": [],
+    "evidence": [],
+    "recommendations": [],
+    "timeline": [
+      {
+        "event": "Case received",
+        "timestamp": "2026-09-04T21:00:44.711085+00:00",
+        "description": "Assessment case created and stored for authorized human review."
+      },
+      {
+        "event": "AI assessed",
+        "timestamp": "2026-09-04T21:00:44.711085+00:00",
+        "description": "AI assessment completed with SVI 90.0/100 and CRITICAL risk."
+      }
+    ]
+  }
+]
