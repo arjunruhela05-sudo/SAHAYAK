@@ -1,0 +1,22 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ShieldCheck, Mail, Lock, Eye, EyeOff, ArrowRight, UserRound, Building2, Settings } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
+
+const roles = [{id:"user",label:"User",icon:UserRound},{id:"authority",label:"Authority",icon:Building2},{id:"admin",label:"Admin",icon:Settings}];
+
+export default function Login(){
+ const {login}=useAuth(); const navigate=useNavigate(); const [role,setRole]=useState("user"); const [form,setForm]=useState({email:"",password:""}); const [error,setError]=useState(""); const [loading,setLoading]=useState(false);
+ const submit=async e=>{e.preventDefault();setError("");setLoading(true);try{const u=login(form.email,form.password,role);navigate(u.role==="admin"?"/admin/dashboard":u.role==="user"?"/user/dashboard":"/dashboard")}catch(err){setError(err.message)}finally{setLoading(false)}};
+ return <div className="min-h-screen bg-slate-50"><div className="grid min-h-screen lg:grid-cols-2">
+  <div className="hidden bg-[#102f49] p-12 text-white lg:flex lg:flex-col lg:justify-between"><div className="flex items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-500"><ShieldCheck/></div><div><b className="text-lg">SAHAYAK</b><p className="text-xs text-slate-300">Human-centred response platform</p></div></div><div className="max-w-lg"><p className="text-sm font-bold uppercase tracking-[.2em] text-teal-300">Secure response infrastructure</p><h2 className="mt-4 text-4xl font-bold leading-tight">One platform. Three role-specific workspaces.</h2><p className="mt-5 text-sm leading-7 text-slate-300">Users submit assessments, authorities review cases, and administrators manage the platform.</p></div><p className="text-xs text-slate-400">SAHAYAK • Secure access portal</p></div>
+  <div className="flex items-center justify-center px-5 py-10"><div className="w-full max-w-md"><div className="mb-7 flex items-center justify-center gap-3 lg:hidden"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#102f49] text-white"><ShieldCheck/></div><b className="text-[#102f49]">SAHAYAK</b></div>
+   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8"><p className="text-xs font-bold uppercase tracking-[.18em] text-teal-600">Secure access</p><h1 className="mt-2 text-2xl font-bold">Welcome back</h1><p className="mt-2 text-sm text-slate-500">Choose your role and sign in.</p>
+    <div className="mt-6 grid grid-cols-3 gap-2">{roles.map(r=>{const I=r.icon;return <button key={r.id} type="button" onClick={()=>setRole(r.id)} className={`rounded-xl border p-3 text-center text-xs font-bold ${role===r.id?"border-teal-500 bg-teal-50 text-teal-700":"border-slate-200 text-slate-500"}`}><I size={18} className="mx-auto mb-1"/>{r.label}</button>})}</div>
+    {error&&<div className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</div>}
+    <form onSubmit={submit} className="mt-6 space-y-4"><label className="block text-sm font-semibold">Email<input className="mt-2 w-full rounded-xl border p-3 outline-none focus:border-teal-500" type="email" required value={form.email} onChange={e=>setForm({...form,email:e.target.value})} placeholder="you@example.com"/></label><label className="block text-sm font-semibold">Password<div className="relative mt-2"><input className="w-full rounded-xl border p-3 pr-11 outline-none focus:border-teal-500" type={form.show?"text":"password"} required value={form.password} onChange={e=>setForm({...form,password:e.target.value})} placeholder="Your password"/><button type="button" onClick={()=>setForm({...form,show:!form.show})} className="absolute right-3 top-3 text-slate-400">{form.show?<EyeOff size={18}/>:<Eye size={18}/>}</button></div></label><button disabled={loading} className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#102f49] py-3.5 font-bold text-white disabled:opacity-60">{loading?"Signing in…":"Sign in"}<ArrowRight size={17}/></button></form>
+    <div className="mt-6 text-center text-sm text-slate-500">Don't have an account? <Link className="font-bold text-teal-600" to="/signup">Create account</Link></div>
+    <div className="mt-5 rounded-xl bg-slate-50 p-3 text-xs text-slate-500"><b>Demo accounts</b><br/>Admin: admin@sahayak.local / Admin@123<br/>Authority: authority@sahayak.local / Authority@123</div>
+   </div></div></div>
+ </div></div>
+}

@@ -1,0 +1,24 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+pytest
+httpx
+
+librosa
+numpy
+soundfile
+python-multipart
+openai-whisper
+sentence-transformers
+
+# Voice nuance analysis (jitter / shimmer / HNR via Praat). Optional: the
+# prosody engine falls back to librosa-only estimates if it is missing.
+praat-parselmouth
+
+# Server-side body-language analysis of uploaded VIDEO FILES (v6).
+# Optional: without them uploaded videos are analysed for audio only and
+# the live-camera tracker (browser) still works.  The .task model files
+# are downloaded once into backend/models_cache on first use.
+mediapipe
+opencv-python-headless
